@@ -6,12 +6,9 @@
 /*   By: ficoppol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/09 17:43:36 by ficoppol          #+#    #+#             */
-/*   Updated: 2018/09/09 18:35:42 by ficoppol         ###   ########.fr       */
+/*   Updated: 2018/09/10 14:31:55 by ficoppol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <string.h>
-#include <stdio.h>
 
 char	*ft_strncat(char *dest, char *src, int nb)
 {
@@ -24,9 +21,9 @@ char	*ft_strncat(char *dest, char *src, int nb)
 		i++;
 	while (j < nb && src[j])
 	{
-		dest[i] == src[j];
+		dest[i] = src[j];
 		i++;
 		j++;
 	}
-	
+	return (dest);
 }

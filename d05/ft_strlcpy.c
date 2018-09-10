@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ficoppol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/06 15:51:47 by ficoppol          #+#    #+#             */
-/*   Updated: 2018/09/10 14:31:23 by ficoppol         ###   ########.fr       */
+/*   Created: 2018/09/10 13:48:26 by ficoppol          #+#    #+#             */
+/*   Updated: 2018/09/10 14:30:11 by ficoppol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, int n)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int i;
+	unsigned int i;
+	unsigned int j;
 
 	i = 0;
-	while (i <= n && dest[i])
-	{
-		if (src[i])
-			dest[i] = src[i];
+	j = 0;
+	while (src[i])
 		i++;
+	size--;
+	while (j < size && src[j])
+	{
+		dest[j] = src[j];
+		j++;
 	}
-	return (dest);
+	dest[j] = '\0';
+	return (i);
 }
