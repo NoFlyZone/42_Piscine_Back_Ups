@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ficoppol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 12:26:04 by ficoppol          #+#    #+#             */
-/*   Updated: 2018/09/10 14:15:20 by ficoppol         ###   ########.fr       */
+/*   Created: 2018/09/09 17:43:36 by ficoppol          #+#    #+#             */
+/*   Updated: 2018/09/10 14:31:55 by ficoppol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+char	*ft_strncat(char *dest, char *src, int nb)
 {
-	unsigned int i;
-	unsigned int j;
+	int i;
+	int j;
 
 	i = 0;
 	j = 0;
 	while (dest[i])
 		i++;
-	size--;
-	while (j < size && dest[i])
+	while (j < nb && src[j])
 	{
 		dest[i] = src[j];
 		i++;
 		j++;
 	}
 	dest[i] = '\0';
-	i = 0;
-	while (dest[i])
-		i++;
-	return (i);
+	return (dest);
 }
