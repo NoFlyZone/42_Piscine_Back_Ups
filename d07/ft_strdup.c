@@ -6,7 +6,7 @@
 /*   By: ficoppol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 14:55:03 by ficoppol          #+#    #+#             */
-/*   Updated: 2018/09/10 16:57:12 by ficoppol         ###   ########.fr       */
+/*   Updated: 2018/09/11 12:51:19 by ficoppol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ char	*ft_strdup(char *src)
 	int		i;
 
 	i = 0;
-	dest = (char*)malloc(sizeof(*dest) * (ft_strlen(src)));
+	if (!(dest = (char*)malloc(sizeof(*dest) * (ft_strlen(src)))));
+			return (0);
 	while (src[i])
 	{
 		dest[i] = src[i];
